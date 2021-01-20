@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.4.11-MariaDB - mariadb.org binary distribution
+-- Versão do servidor:           10.4.13-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win64
--- HeidiSQL Versão:              11.0.0.5919
+-- HeidiSQL Versão:              11.1.0.6116
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -10,6 +10,7 @@
 /*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 -- Copiando estrutura do banco de dados para site
@@ -40,9 +41,9 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela site.cliente: ~9 rows (aproximadamente)
+-- Copiando dados para a tabela site.cliente: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` (`id`, `nome`, `sobrenome`, `nome_social`, `cnpj`, `cpf`, `id_layout`, `valor`, `descricao`, `cidade`, `estado`, `endereco`, `bairro`, `referencia`, `cep`, `numero`, `email`, `telefone`, `celular`) VALUES
+REPLACE INTO `cliente` (`id`, `nome`, `sobrenome`, `nome_social`, `cnpj`, `cpf`, `id_layout`, `valor`, `descricao`, `cidade`, `estado`, `endereco`, `bairro`, `referencia`, `cep`, `numero`, `email`, `telefone`, `celular`) VALUES
 	(4, 'Noemia', 'Aparecida', 'Lojas Noemia', '67.387.802/0001-77', '145.227.240-98', '1', 21000, 'Criar site layout 1', 'Bauru', 'AC', 'Rodovia Raposo Tavares', 'Aldeota', '', '68911-138', '6432', 'Noemia@gmail.com', '15 3425-1835', '15 99876-8658'),
 	(5, 'Fernando', 'Henrique', 'Lojas Fernando', '75.114.568/0001-32', '802.998.430-84', '1', 21640, 'Criar site layout 1', 'Duartina', 'SP', 'Rua Arlindo Nogueira', 'Guriri Norte', '', '79034-000', '142', 'Fernando@gmail.com', '15 3425-1835', '15 99876-8658'),
 	(7, 'Miriam', 'Lima', 'Lojas Miria', '81.124.285/0001-74', '989.859.960-02', '2', 17400, 'Criar Site Layout 2', 'São Paulo', 'SP', 'Rua Cristiano Olsen', 'Centro', '', '79010-192', '124', 'Miriam@gmail.com', '14 3425-1935', '14 99885-3445'),
@@ -60,18 +61,10 @@ CREATE TABLE IF NOT EXISTS `funcao` (
 
 -- Copiando dados para a tabela site.funcao: ~11 rows (aproximadamente)
 /*!40000 ALTER TABLE `funcao` DISABLE KEYS */;
-INSERT INTO `funcao` (`id`, `descricao`, `salario`) VALUES
+REPLACE INTO `funcao` (`id`, `descricao`, `salario`) VALUES
 	(1, 'Diretor', 10000),
 	(2, 'Socio', 9000),
-	(3, 'Gerente', 8000),
-	(4, 'Desenvolvedor Master', 7000),
-	(5, 'Desenvolvedor Senior', 6000),
-	(6, 'Desenvolvedor Pleno', 5000),
-	(7, 'Desenvolvedor Junior', 4000),
-	(12, 'Suporte Master', 7000),
-	(13, 'Suporte Senior', 6000),
-	(14, 'Suporte Pleno', 5000),
-	(15, 'Suporte Junior', 4000);
+	(3, 'Tecnico', 8000);
 /*!40000 ALTER TABLE `funcao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela site.mao_de_obra
@@ -82,12 +75,12 @@ CREATE TABLE IF NOT EXISTS `mao_de_obra` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Copiando dados para a tabela site.mao_de_obra: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela site.mao_de_obra: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `mao_de_obra` DISABLE KEYS */;
-INSERT INTO `mao_de_obra` (`id`, `descricao`, `valor`) VALUES
-	(1, 'formatar', 2000),
-	(2, 'impressao', 200),
-	(5, 'Instalar Windows 10', 100);
+REPLACE INTO `mao_de_obra` (`id`, `descricao`, `valor`) VALUES
+	(1, 'Instalação de Chuveiro', 2000),
+	(2, 'Instalação de Tomada', 200),
+	(5, 'Instalação da Rede Eletrica', 100);
 /*!40000 ALTER TABLE `mao_de_obra` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela site.pecas_compradas
@@ -102,10 +95,10 @@ CREATE TABLE IF NOT EXISTS `pecas_compradas` (
 
 -- Copiando dados para a tabela site.pecas_compradas: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `pecas_compradas` DISABLE KEYS */;
-INSERT INTO `pecas_compradas` (`id`, `descricao`, `nota_fiscal`, `data_compra`, `tensao`) VALUES
-	(5, 'Pendrive', '151500', '2021-01-13', '12'),
-	(6, 'notebook', '151500', '2021-01-19', '12'),
-	(7, 'Chave elétrica', '151500', '2021-01-20', '12');
+REPLACE INTO `pecas_compradas` (`id`, `descricao`, `nota_fiscal`, `data_compra`, `tensao`) VALUES
+	(5, 'Chave de fenda', '151500', '2021-01-13', '115 '),
+	(6, 'Lanterna ', '151500', '2021-01-19', '127'),
+	(7, 'Furadeira', '151500', '2021-01-20', '220');
 /*!40000 ALTER TABLE `pecas_compradas` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela site.pivot_mao_de_obra
@@ -118,9 +111,9 @@ CREATE TABLE IF NOT EXISTS `pivot_mao_de_obra` (
   KEY `id_requisicao` (`id_requisicao`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- Copiando dados para a tabela site.pivot_mao_de_obra: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela site.pivot_mao_de_obra: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `pivot_mao_de_obra` DISABLE KEYS */;
-INSERT INTO `pivot_mao_de_obra` (`id`, `id_mdo`, `id_requisicao`) VALUES
+REPLACE INTO `pivot_mao_de_obra` (`id`, `id_mdo`, `id_requisicao`) VALUES
 	(6, 1, 1),
 	(7, 5, 1),
 	(8, 5, 1),
@@ -140,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `pivot_pecas_compradas` (
 
 -- Copiando dados para a tabela site.pivot_pecas_compradas: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `pivot_pecas_compradas` DISABLE KEYS */;
-INSERT INTO `pivot_pecas_compradas` (`id`, `id_pecas`, `id_requisicao`) VALUES
+REPLACE INTO `pivot_pecas_compradas` (`id`, `id_pecas`, `id_requisicao`) VALUES
 	(8, 5, 1),
 	(9, 7, 1);
 /*!40000 ALTER TABLE `pivot_pecas_compradas` ENABLE KEYS */;
@@ -154,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `prioridade_requisicao` (
 
 -- Copiando dados para a tabela site.prioridade_requisicao: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `prioridade_requisicao` DISABLE KEYS */;
-INSERT INTO `prioridade_requisicao` (`id`, `descricao`) VALUES
+REPLACE INTO `prioridade_requisicao` (`id`, `descricao`) VALUES
 	(1, 'Urgente'),
 	(2, 'Media'),
 	(3, 'Leve');
@@ -179,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `requisicao` (
 
 -- Copiando dados para a tabela site.requisicao: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `requisicao` DISABLE KEYS */;
-INSERT INTO `requisicao` (`id`, `descricao`, `prazo`, `data_cadastro`, `id_situacao`, `id_prioridade`, `id_responsavel`, `id_cliente`) VALUES
+REPLACE INTO `requisicao` (`id`, `descricao`, `prazo`, `data_cadastro`, `id_situacao`, `id_prioridade`, `id_responsavel`, `id_cliente`) VALUES
 	(1, 'Realizar Site para o Cliente, Conforme solicitado', '2021-01-20 00:00:00', '2021-01-20 00:00:00', 1, 2, 4, 4),
 	(2, 'O Cliente Esta com Problemas, Por gentileza, Ligar!', '2018-11-06 00:00:00', '2021-01-19 00:00:00', 2, 1, 4, 5);
 /*!40000 ALTER TABLE `requisicao` ENABLE KEYS */;
@@ -193,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `setores` (
 
 -- Copiando dados para a tabela site.setores: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `setores` DISABLE KEYS */;
-INSERT INTO `setores` (`id`, `nome_setor`) VALUES
+REPLACE INTO `setores` (`id`, `nome_setor`) VALUES
 	(1, 'Técnico'),
 	(2, 'Programador'),
 	(3, 'Diretor');
@@ -206,9 +199,9 @@ CREATE TABLE IF NOT EXISTS `situacao_requisicao` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela site.situacao_requisicao: ~5 rows (aproximadamente)
+-- Copiando dados para a tabela site.situacao_requisicao: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `situacao_requisicao` DISABLE KEYS */;
-INSERT INTO `situacao_requisicao` (`id`, `descricao`) VALUES
+REPLACE INTO `situacao_requisicao` (`id`, `descricao`) VALUES
 	(1, 'Atendido'),
 	(2, 'Em Atendimento'),
 	(3, 'Aguardando');
@@ -230,11 +223,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 -- Copiando dados para a tabela site.usuario: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `email`, `senha`, `setor`, `funcao`) VALUES
+REPLACE INTO `usuario` (`id`, `nome`, `sobrenome`, `email`, `senha`, `setor`, `funcao`) VALUES
 	(4, 'David', 'Vinicius', 'David@gmail.com', '123', 3, 1),
-	(15, 'Gabriel', 'Lino', 'Gabriel@gmail.com', '123', 1, 5);
+	(15, 'Gabriel', 'Lino', 'Gabriel@gmail.com', '123', 1, 3);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
